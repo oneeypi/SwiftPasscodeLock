@@ -4,21 +4,16 @@ A Swift implementation of passcode lock for iOS with TouchID authentication.
 <img src="https://raw.githubusercontent.com/yankodimitrov/SwiftPasscodeLock/master/passcode-lock.gif" height="386">
 
 ## Installation
-PasscodeLock requires Swift 2.0 and XCode 7 beta 6
+PasscodeLock requires Swift 4.2 and XCode 10.
+Just download the files and move them into your project.
 
-#### Carthage
-
-Add the following line to your [Cartfile](https://github.com/carthage/carthage)
-```swift
-github "yankodimitrov/SwiftPasscodeLock"
-```
 ## Usage
 
 1. Create an implementation of the `PasscodeRepositoryType` protocol.
 
-2. Create an implementation of the `PasscodeLockConfigurationType` protocol and set your preferred passcode lock configuration options. If you set the `maximumInccorectPasscodeAttempts` to a number greather than zero when the user reaches that number of incorrect passcode attempts a notification with name `PasscodeLockIncorrectPasscodeNotification` will be posted on the default `NSNotificationCenter`. 
+2. Create an implementation of the `PasscodeLockConfigurationType` protocol and set your preferred passcode lock configuration options. If you set the `maximumInccorectPasscodeAttempts` to a number greather than zero when the user reaches that number of incorrect passcode attempts a notification with name `PasscodeLockIncorrectPasscodeNotification` will be posted on the default `NotificationCenter`. 
 
-3. Create an instance of the `PasscodeLockPresenter` class. Next inside your `UIApplicationDelegate` implementation call it to present the passcode in `didFinishLaunchingWithOptions` and `applicationDidEnterBackground` methods. The passcode lock will be presented only if your user has set a passcode.
+3. Create an instance of the `PasscodeLockPresenter` class. Next inside your `UIApplicationDelegate` implementation call it to present the passcode in `didFinishLaunchingWithOptions` and `applicationDidEnterBackground` methods. The passcode lock will be presented only if your user has set a passcode. (not necessary)
 
 4. Allow your users to set a passcode by presenting the `PasscodeLockViewController` in `.SetPasscode` state:
 ```swift
@@ -48,6 +43,7 @@ PasscodeLock comes with two view components: `PasscodeSignPlaceholderView` and `
 #### Localization
 
 Take a look at `PasscodeLock/en.lproj/PasscodeLock.strings` for the localization keys. Here again the PasscodeLock will look for the `PasscodeLock.strings` file inside your app bundle and if it can't find it will use the default localization file.
+I added the german translation.
 
 ## Demo App
 
