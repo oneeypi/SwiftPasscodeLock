@@ -4,7 +4,7 @@ A Swift implementation of passcode lock for iOS with TouchID authentication.
 <img src="https://raw.githubusercontent.com/yankodimitrov/SwiftPasscodeLock/master/passcode-lock.gif" height="386">
 
 ## Installation
-PasscodeLock requires Swift 2.0 and Xcode 7
+PasscodeLock requires Swift 2.0 and XCode 7 beta 6
 
 #### Carthage
 
@@ -37,9 +37,9 @@ Also you can set the initial passcode lock state to your own implementation of t
 
 #### Custom Design
 
-The PasscodeLock will look for `PasscodeLockView.xib` inside your app bundle and if it can't find it will load its default one, so if you want to have a custom design create a new `xib` with the name `PasscodeLockView` and set its owner to an instance of `PasscodeLockViewController` class and module to `PasscodeLock`. 
+The PasscodeLock will look for `PasscodeLockView.xib` inside your app bundle and if it can't find it will load its default one, so if you want to have a custom design create a new `xib` with the name `PasscodeLockView` and set its owner to an instance of `PasscodeLockViewController` class.
 
-Then connect the `view` outlet to the view of your `xib` file and make sure to connect the remaining `IBOutlet`s and `IBAction`s. Also make sure to set module to `PasscodeLock` on all `PasscodeSignPlaceholderView` and `PasscodeSignButton` in the nib.
+Then connect the `view` outlet to the view of your `xib` file and make sure to conenct the remaining `IBOutlet`s and `IBAction`s.
 
 PasscodeLock comes with two view components: `PasscodeSignPlaceholderView` and `PasscodeSignButton` that you can use to create your own custom designs. Both classes are `@IBDesignable` and `@IBInspectable`, so you can see their appearance and change their properties right inside the interface builder:
 
